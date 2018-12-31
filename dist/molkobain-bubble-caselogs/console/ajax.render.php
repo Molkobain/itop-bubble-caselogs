@@ -58,7 +58,7 @@ try
             {
                 /** @var \ormCaseLog $oCaseLog */
                 $oCaseLog = $oObject->Get($sAttCode);
-                $sHtml = \Molkobain\iTop\BubbleCaselogs\Helper\CaselogHelper::FormatEntries($oCaseLog->GetAsArray());
+                $sHtml = \Molkobain\iTop\Extension\BubbleCaselogs\Helper\CaselogHelper::FormatEntries($oCaseLog->GetAsArray());
                 $oPage->add($sHtml);
                 $oPage->add_ready_script(InlineImage::FixImagesWidth());
             }
