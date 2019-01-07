@@ -7,7 +7,7 @@ It also allows you to:
 * Easily distinguish users of the conversation through colors and profile pictures.
 * Open / close all messages at once.
 
-![Description decoration](https://raw.githubusercontent.com/Molkobain/itop-bubble-caselogs/develop/docs/mbc-portal-example-01.PNG)
+![Description decoration](https://raw.githubusercontent.com/Molkobain/itop-bubble-caselogs/develop/docs/mbc-portal-example-01.png)
 
 ### Compatibility
 Compatible with iTop 2.4+
@@ -19,7 +19,7 @@ Compatible with iTop 2.4+
 
 *Your folders should look like this*
 
-![Extensions folder](https://raw.githubusercontent.com/Molkobain/itop-bubble-caselogs/develop/docs/mbc-install.PNG)
+![Extensions folder](https://raw.githubusercontent.com/Molkobain/itop-bubble-caselogs/develop/docs/mbc-install.png)
 
 ### Configuration
 No configuration needed.
