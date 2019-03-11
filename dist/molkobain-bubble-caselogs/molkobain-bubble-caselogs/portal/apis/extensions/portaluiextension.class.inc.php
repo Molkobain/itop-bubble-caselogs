@@ -10,7 +10,6 @@
 namespace Molkobain\iTop\Extension\BubbleCaselogs\Portal\Extension;
 
 use utils;
-use MetaModel;
 use AbstractPortalUIExtension;
 use Silex\Application;
 use Molkobain\iTop\Extension\BubbleCaselogs\Common\Helper\ConfigHelper;
