@@ -1,0 +1,330 @@
+/*!
+ * Copyright (c) 2015 - 2019 Molkobain.
+ *
+ * This file is part of licensed extension.
+ *
+ * Use of this extension is bound by the license you purchased. A license grants you a non-exclusive and non-transferable right to use and incorporate the item in your personal or commercial projects. There are several licenses available (see https://www.molkobain.com/usage-licenses/ for more informations)
+ */
+/* Reset for admin console mostly */
+.molkobain-bubble-caselogs {
+  box-sizing: border-box;
+}
+.molkobain-bubble-caselogs * {
+  box-sizing: border-box;
+}
+.molkobain-bubble-caselogs *:before, .molkobain-bubble-caselogs *:after {
+  box-sizing: border-box;
+}
+/* CaseLog field markup */
+.molkobain-bubble-caselogs {
+  position: relative;
+}
+.molkobain-bubble-caselogs .mbc-loader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.33);
+  color: #080808;
+}
+.molkobain-bubble-caselogs .mbc-thread {
+  position: relative;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-header {
+  padding: 8px;
+  font-size: 11px;
+  background-color: rgba(242, 242, 242, 0.38);
+  border-bottom: 1px solid #ddd;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-header span {
+  color: #777;
+  /* body: color */
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-header .mbc-th-togglers .mbc-tht-toggler {
+  cursor: pointer;
+  text-decoration: none;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-header .mbc-th-togglers .mbc-tht-separator {
+  margin: 0 0.2em;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-header .mbc-th-info > span {
+  margin-left: 0.5em;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-header .mbc-th-info > span > span {
+  margin-left: 0.5em;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-header .mbc-th-info > span:first-child {
+  margin-left: 0;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content {
+  padding: 5px;
+  /*max-height: 400px;
+   overflow: auto;*/
+  background-color: #f2f2f2;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-date {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #808080;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-date:first-child {
+  display: none;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block {
+  position: relative;
+  min-height: 40px;
+  /* .mbc-tcb-medallion height */
+  margin-bottom: 15px;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-medallion, .molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-medallion {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 21px;
+  color: #444;
+  /* .mbc-tcb-entries color */
+  background-size: 100%;
+  background-position: center center;
+  background-color: #fff;
+  /* .mbc-tcb-entries background-color */
+  background-repeat: no-repeat;
+  border-radius: 100%;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-user {
+  display: none;
+  margin-left: 54px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #444;
+  /* .mbc-tcb-entries background-color */
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries {
+  position: relative;
+  display: inline-block;
+  margin-left: 60px;
+  background-color: #fff;
+  color: #444;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry {
+  position: relative;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry img {
+  max-width: 100%;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-content {
+  display: block;
+  overflow-x: auto;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-content > p:last-of-type {
+  margin-bottom: 0px;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-date {
+  margin-top: 5px;
+  opacity: 0.6;
+  font-size: 10px;
+  text-align: right;
+  transition: all 0.2s linear;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  padding: 2px 5px;
+  opacity: 0;
+  cursor: pointer;
+  background-color: #fff;
+  /* .mbc-tcb-entries background-color */
+  transition: all 0.2s linear;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry.closed {
+  cursor: pointer;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry.closed .mbc-tcbe-content {
+  height: 0px;
+  overflow-y: hidden;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry.closed .mbc-tcbe-content:after {
+  content: "...";
+  position: absolute;
+  top: 10px;
+  left: 9px;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry:first-child .mbc-tcbe-content:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -15px;
+  width: 15px;
+  height: 15px;
+  border: 8px solid transparent;
+  border-top-color: #fff;
+  /* .mbc-tcb-entries background-color */
+  border-right-color: #fff;
+  /* .mbc-tcb-entries background-color */
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry:last-child {
+  border-bottom: none;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry:hover .mbc-tcbe-date {
+  opacity: 1;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block .mbc-tcb-entries .mbc-tcb-entry:hover:not(.closed) .mbc-tcbe-toggler {
+  opacity: 1;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me {
+  text-align: right;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me .mbc-tcb-medallion {
+  left: initial;
+  right: 0px;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me .mbc-tcb-user {
+  display: none;
+  margin-left: initial;
+  margin-right: 54px;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me .mbc-tcb-entries {
+  margin-left: initial;
+  margin-right: 60px;
+  text-align: right;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
+  right: initial;
+  left: 5px;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me .mbc-tcb-entries .mbc-tcb-entry:first-child .mbc-tcbe-content:before {
+  left: initial;
+  right: -15px;
+  border-right-color: transparent;
+  border-left-color: #fff;
+  /* .mbc-tcb-entries background-color */
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block:last-child {
+  margin-bottom: 0px;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-1 .mbc-tcb-medallion {
+  color: #fff;
+  background-color: #ea7d1e;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-1 .mbc-tcb-user {
+  color: #ea7d1e;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-1 .mbc-tcb-entries {
+  color: #fff;
+  background-color: #ea7d1e;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-1 .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
+  background-color: #ea7d1e;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-1 .mbc-tcb-entries .mbc-tcb-entry:first-child .mbc-tcbe-content:before {
+  border-top-color: #ea7d1e;
+  border-right-color: #ea7d1e;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-2 .mbc-tcb-medallion {
+  color: #fff;
+  background-color: #e9a537;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-2 .mbc-tcb-user {
+  color: #e9a537;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-2 .mbc-tcb-entries {
+  color: #fff;
+  background-color: #e9a537;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-2 .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
+  background-color: #e9a537;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-2 .mbc-tcb-entries .mbc-tcb-entry:first-child .mbc-tcbe-content:before {
+  border-top-color: #e9a537;
+  border-right-color: #e9a537;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-3 .mbc-tcb-medallion {
+  color: #fff;
+  background-color: #d16c13;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-3 .mbc-tcb-user {
+  color: #d16c13;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-3 .mbc-tcb-entries {
+  color: #fff;
+  background-color: #d16c13;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-3 .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
+  background-color: #d16c13;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-3 .mbc-tcb-entries .mbc-tcb-entry:first-child .mbc-tcbe-content:before {
+  border-top-color: #d16c13;
+  border-right-color: #d16c13;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-4 .mbc-tcb-medallion {
+  color: #fff;
+  background-color: #e3952c;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-4 .mbc-tcb-user {
+  color: #e3952c;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-4 .mbc-tcb-entries {
+  color: #fff;
+  background-color: #e3952c;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-4 .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
+  background-color: #e3952c;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-4 .mbc-tcb-entries .mbc-tcb-entry:first-child .mbc-tcbe-content:before {
+  border-top-color: #e3952c;
+  border-right-color: #e3952c;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-5 .mbc-tcb-medallion {
+  color: #fff;
+  background-color: #b05b10;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-5 .mbc-tcb-user {
+  color: #b05b10;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-5 .mbc-tcb-entries {
+  color: #fff;
+  background-color: #b05b10;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-5 .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
+  background-color: #b05b10;
+}
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block-color-5 .mbc-tcb-entries .mbc-tcb-entry:first-child .mbc-tcbe-content:before {
+  border-top-color: #b05b10;
+  border-right-color: #b05b10;
+}
+@media (min-width: 768px) {
+  .molkobain-bubble-caselogs .mbc-thread {
+    /*max-height: 500px;*/
+  }
+}
+/* Adjustments for admin console */
+.caselog .molkobain-bubble-caselogs {
+  border-spacing: 0px;
+}
+.caselog .molkobain-bubble-caselogs .mbc-thread {
+  border: none;
+}
+.caselog .molkobain-bubble-caselogs .mbc-thread .mbc-thread-header {
+  background-color: #f2f2f2;
+}
+.caselog .molkobain-bubble-caselogs .mbc-thread .mbc-thread-content {
+  background-color: #e6e6e6;
+}
+/* Used to center tooltip text in the admin console */
+.mbc-text-align {
+  text-align: center !important;
+}
