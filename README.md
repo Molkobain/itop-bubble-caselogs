@@ -14,7 +14,7 @@ It also allows you to:
 * Easily distinguish users of the conversation through colors and profile pictures.
 * Open / close all messages at once.
 
-![Description decoration](https://raw.githubusercontent.com/Molkobain/itop-bubble-caselogs/develop/docs/mbc-portal-example-01.png)
+![Description decoration](docs/mbc-portal-example-01.png)
 
 ### Compatibility
 Compatible with iTop 2.4+
@@ -24,18 +24,16 @@ Compatible with iTop 2.4+
 * Module `molkobain-handy-framework/1.1.0`
 
 ## Downloads
-Stable releases can be found either on the [releases page](https://github.com/Molkobain/itop-bubble-caselogs/releases) or on [Molkobain I/O](https://www.molkobain.com/product/bubble-caselogs/).
-
-Downloading it directly from the *Clone or download* will get you the version under development which might be unstable.
+Stable releases can be found on [Molkobain I/O](https://www.molkobain.com/product/bubble-caselogs/).
 
 ### Installation
 * Unzip the extension
-* Copy the ``dist/molkobain-bubble-caselogs`` folder under ``<PATH_TO_ITOP>/extensions`` folder of your iTop
+* Copy the ``molkobain-bubble-caselogs`` folder under ``<PATH_TO_ITOP>/extensions`` folder of your iTop
 * Run iTop setup & select extension *Bubble caselogs*
 
 *Your folders should look like this*
 
-![Extensions folder](https://raw.githubusercontent.com/Molkobain/itop-bubble-caselogs/develop/docs/mbc-install.png)
+![Extensions folder](docs/mbc-install.png)
 
 ### Configuration
 No configuration needed.
