@@ -31,6 +31,7 @@ if(class_exists('AbstractPortalUIExtension'))
 			$aReturn = array();
 
 			$aReturn[] = utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/fontawesome-free-5.7.2-web/css/all.min.css?v=' . utils::GetCompiledModuleVersion('molkobain-fontawesome5-pack');
+			$aReturn[] = utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/common/css/fontawesome5-pack.css?v=' . utils::GetCompiledModuleVersion('molkobain-fontawesome5-pack');
 
 			return $aReturn;
 		}

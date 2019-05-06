@@ -5,9 +5,9 @@
 	<author><![CDATA[Guillaume Lajarige]]></author>
 	<label><![CDATA[Bubble caselogs]]></label>
 	<description><![CDATA[Modern look and feel for caselogs in both the enhanced portal and the console.]]></description>
-	<version>1.1.0</version>
-	<release_date>2019-03-11</release_date>
-	<version_description><![CDATA[Add configuration parameters to choose "open / close all" icons.]]></version_description>
+	<version>1.1.1</version>
+	<release_date>2019-05-06</release_date>
+	<version_description><![CDATA[Fix compatibility with some FontAwesome 4.x icons.]]></version_description>
 	<itop_version_min>2.4.0</itop_version_min>
 	<status>stable</status>
 	<mandatory>false</mandatory>
