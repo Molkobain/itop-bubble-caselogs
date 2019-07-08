@@ -47,7 +47,7 @@ try
     {
         case 'format':
             $oPage->SetContentType('text/html');
-            $sGUI = utils::ReadParam('portal', CaselogHelper::DEFAULT_UI);
+            $sGUI = utils::ReadParam('gui', CaselogHelper::DEFAULT_UI);
             $sClass = utils::ReadParam('class', '');
             $iKey = (int) utils::ReadParam('id', 0);
             $sAttCode = utils::ReadPostedParam('att_code', '');
