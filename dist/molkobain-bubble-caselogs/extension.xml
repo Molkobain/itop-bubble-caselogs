@@ -5,9 +5,9 @@
 	<author><![CDATA[Guillaume Lajarige]]></author>
 	<label><![CDATA[Bubble caselogs]]></label>
 	<description><![CDATA[Modern look and feel for caselogs in both the enhanced portal and the console.]]></description>
-	<version>1.1.1</version>
-	<release_date>2019-05-06</release_date>
-	<version_description><![CDATA[Fix compatibility with some FontAwesome 4.x icons.]]></version_description>
+	<version>1.1.2</version>
+	<release_date>2019-07-08</release_date>
+	<version_description><![CDATA[Fix rendering not happening in portal modals sometimes.]]></version_description>
 	<itop_version_min>2.4.0</itop_version_min>
 	<status>stable</status>
 	<mandatory>false</mandatory>
