@@ -14,6 +14,7 @@ $(function()
             options: {
                 debug: false,
                 endpoint: null,
+                gui: 'console',
             },
 
             // Constructor
@@ -63,6 +64,7 @@ $(function()
                 $.post(
                     this._getEndpoint(),
                     {
+                        gui: this.options.gui,
                         att_code: this._findAttCode(),
                     }
                 )

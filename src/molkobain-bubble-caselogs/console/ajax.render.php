@@ -7,6 +7,8 @@
  * Use of this extension is bound by the license you purchased. A license grants you a non-exclusive and non-transferable right to use and incorporate the item in your personal or commercial projects. There are several licenses available (see https://www.molkobain.com/usage-licenses/ for more informations)
  */
 
+use Molkobain\iTop\Extension\BubbleCaselogs\Common\Helper\CaselogHelper;
+
 $aApprootLevelsToTry = array(
 	'/../../',
 	'/../../../',
@@ -45,6 +47,7 @@ try
     {
         case 'format':
             $oPage->SetContentType('text/html');
+            $sGUI = utils::ReadParam('portal', CaselogHelper::DEFAULT_UI);
             $sClass = utils::ReadParam('class', '');
             $iKey = (int) utils::ReadParam('id', 0);
             $sAttCode = utils::ReadPostedParam('att_code', '');
@@ -61,7 +64,7 @@ try
             {
                 /** @var \ormCaseLog $oCaseLog */
                 $oCaseLog = $oObject->Get($sAttCode);
-                $sHtml = \Molkobain\iTop\Extension\BubbleCaselogs\Common\Helper\CaselogHelper::FormatEntries($oCaseLog->GetAsArray());
+                $sHtml = CaselogHelper::FormatEntries($oCaseLog->GetAsArray(), $sGUI);
                 $oPage->add($sHtml);
                 $oPage->add_ready_script(InlineImage::FixImagesWidth());
             }

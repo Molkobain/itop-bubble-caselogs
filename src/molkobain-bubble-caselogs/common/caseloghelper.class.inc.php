@@ -16,6 +16,7 @@ use AttributeDate;
 use AttributeDateTime;
 use AttributeText;
 use InlineImage;
+use utils;
 
 /**
  * Class CaselogHelper
@@ -24,14 +25,25 @@ use InlineImage;
  */
 class CaselogHelper
 {
+	/** @var string ENUM_UI_CONSOLE */
+	const ENUM_UI_CONSOLE = 'console';
+	/** @var string ENUM_UI_PORTAL */
+	const ENUM_UI_PORTAL = 'portal';
+
+	/** @var string DEFAULT_UI */
+	const DEFAULT_UI = self::ENUM_UI_CONSOLE;
+
     /**
      * @param array $aEntries
+	 * @param string $sGUI
      *
      * @return string
      *
-     * @throws \Exception;
+	 * @throws \ArchivedObjectException
+	 * @throws \CoreException
+	 * @throws \Exception
      */
-    public static function FormatEntries($aEntries)
+    public static function FormatEntries($aEntries, $sGUI = self::DEFAULT_UI)
     {
         $sHtml = '';
         $iNbEntries = count($aEntries);
@@ -120,11 +132,19 @@ EOF;
                         $iEntryContactId = $oEntryUser->Get('contactid');
                         $oEntryContact = MetaModel::GetObject($sEntryContactClass, $iEntryContactId, false);
 
+                        $sEntryPictureAttCode = 'picture';
                         /** @var \ormDocument $oEntryPicture */
-                        $oEntryPicture = $oEntryContact->Get('picture');
+                        $oEntryPicture = $oEntryContact->Get($sEntryPictureAttCode);
                         if(!$oEntryPicture->IsEmpty())
                         {
-                            $sEntryContactPictureUrl = $oEntryPicture->GetDisplayURL($sEntryContactClass, $iEntryContactId, 'picture');
+                        	if($sGUI === static::ENUM_UI_PORTAL)
+	                        {
+	                        	$sEntryContactPictureUrl = utils::GetAbsoluteUrlAppRoot() . 'pages/exec.php/object/document/display/' . $sEntryContactClass . '/' . $iEntryContactId . '/' . $sEntryPictureAttCode . '?exec_module=itop-portal&exec_page=index.php';
+	                        }
+                        	else
+	                        {
+                                $sEntryContactPictureUrl = $oEntryPicture->GetDisplayURL($sEntryContactClass, $iEntryContactId, $sEntryPictureAttCode);
+	                        }
                         }
                     }
                 }
