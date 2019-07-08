@@ -7,17 +7,20 @@
  * Use of this extension is bound by the license you purchased. A license grants you a non-exclusive and non-transferable right to use and incorporate the item in your personal or commercial projects. There are several licenses available (see https://www.molkobain.com/usage-licenses/ for more informations)
  */
 
-if(file_exists(__DIR__ . '/../../approot.inc.php'))
+$aApprootLevelsToTry = array(
+	'/../../',
+	'/../../../',
+	'/../../../../',
+	'/../../../../../',
+);
+foreach($aApprootLevelsToTry as $sApprootLevelToTry)
 {
-    require_once __DIR__ . '/../../approot.inc.php';   // When in env-xxxx folder
-}
-elseif(file_exists(__DIR__ . '/../../../approot.inc.php'))
-{
-    require_once __DIR__ . '/../../../approot.inc.php';   // When in datamodels/x.x folder
-}
-else
-{
-    require_once __DIR__ . '/../../../../../tests/com-2.4.1/approot.inc.php';
+	$sApprootPath = __DIR__ . $sApprootLevelToTry . 'approot.inc.php';
+	if(file_exists($sApprootPath))
+	{
+		require_once $sApprootPath;
+		break;
+	}
 }
 require_once(APPROOT . '/application/application.inc.php');
 require_once(APPROOT . '/application/webpage.class.inc.php');
