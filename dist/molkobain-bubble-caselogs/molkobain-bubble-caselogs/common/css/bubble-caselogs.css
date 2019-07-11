@@ -202,6 +202,9 @@
   margin-right: 60px;
   text-align: right;
 }
+.molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me .mbc-tcb-entries .mbc-tcb-entry {
+  text-align: left;
+}
 .molkobain-bubble-caselogs .mbc-thread .mbc-thread-content .mbc-tc-block.mbc-tc-block-me .mbc-tcb-entries .mbc-tcb-entry .mbc-tcbe-toggler {
   right: initial;
   left: 5px;
