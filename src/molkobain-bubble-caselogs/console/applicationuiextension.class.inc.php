@@ -27,8 +27,8 @@ class ApplicationUIExtension implements iApplicationUIExtension
      */
     public function OnDisplayProperties($oObject, WebPage $oPage, $bEditMode = false)
     {
-        // Check if enabled
-        if(ConfigHelper::IsEnabled() === false)
+        // Check if disabled
+        if((ConfigHelper::IsEnabled() === false) || (ConfigHelper::GetSetting('disabled_in_backoffice') === true))
         {
             return;
         }

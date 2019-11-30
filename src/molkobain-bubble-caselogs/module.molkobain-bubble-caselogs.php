@@ -61,6 +61,8 @@ SetupWebPage::AddModule(
             'enabled' => true,
             'all_entries_opened' => false,
             'reverse_order' => false,
+			'disabled_in_backoffice' => false,
+			'disabled_in_portals' => false,
 		),
 	)
 );

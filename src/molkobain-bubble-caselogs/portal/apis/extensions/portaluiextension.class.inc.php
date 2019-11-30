@@ -26,6 +26,12 @@ class PortalUIExtension extends AbstractPortalUIExtension
      */
     public function GetCSSFiles(Application $oApp)
     {
+	    // Check if disabled
+	    if((ConfigHelper::IsEnabled() === false) || (ConfigHelper::GetSetting('disabled_in_portals') === true))
+	    {
+		    return array();
+	    }
+
         $sModuleVersion = utils::GetCompiledModuleVersion(ConfigHelper::GetModuleCode());
         $sURLBase = utils::GetAbsoluteUrlModulesRoot() . '/' . ConfigHelper::GetModuleCode() . '/';
 
@@ -41,6 +47,12 @@ class PortalUIExtension extends AbstractPortalUIExtension
      */
     public function GetJSFiles(Application $oApp)
     {
+	    // Check if disabled
+	    if((ConfigHelper::IsEnabled() === false) || (ConfigHelper::GetSetting('disabled_in_portals') === true))
+	    {
+		    return array();
+	    }
+
         $sModuleVersion = utils::GetCompiledModuleVersion(ConfigHelper::GetModuleCode());
         $sURLBase = utils::GetAbsoluteUrlModulesRoot() . '/' . ConfigHelper::GetModuleCode() . '/';
 
@@ -56,8 +68,8 @@ class PortalUIExtension extends AbstractPortalUIExtension
      */
     public function GetJSInline(Application $oApp)
     {
-        // Check if enabled
-        if(ConfigHelper::IsEnabled() === false)
+        // Check if disabled
+        if((ConfigHelper::IsEnabled() === false) || (ConfigHelper::GetSetting('disabled_in_portals') === true))
         {
             return '';
         }
