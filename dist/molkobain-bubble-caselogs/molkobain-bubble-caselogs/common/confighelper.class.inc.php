@@ -24,6 +24,8 @@ class ConfigHelper extends BaseConfigHelper
     const DEFAULT_SETTING_DEBUG = false;
 	const DEFAULT_SETTING_REVERSE_ORDER = false;
 	const DEFAULT_SETTING_ALL_ENTRIES_OPENED = false;
+	const DEFAULT_SETTING_DISABLED_IN_BACKOFFICE = false;
+	const DEFAULT_SETTING_DISABLED_IN_PORTALS = false;
     const DEFAULT_SETTING_OPEN_ALL_ICON = 'fas fa-book-open';
     const DEFAULT_SETTING_CLOSE_ALL_ICON = 'fas fa-book';
     const DEFAULT_SETTING_ICONS_SEPARATOR = '-';

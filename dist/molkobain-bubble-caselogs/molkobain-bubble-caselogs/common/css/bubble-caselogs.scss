@@ -21,6 +21,20 @@ $bubble-4th-peer-bg-color: #e3952c !default;
 $bubble-5th-peer-color: $white !default;
 $bubble-5th-peer-bg-color: darken($combodo-orange, 14%) !default;
 
+/* Hide standard caselogs to avoid glitch while reformatting */
+/* - Console */
+.caselog{
+	.caselog_header,
+	.caselog_entry,
+	.caselog_entry_html{
+		visibility: hidden;
+	}
+}
+/* - Portal */
+.field_set .form_field_control .caselog_field_entry{
+	visibility: hidden;
+}
+
 /* Reset for admin console mostly */
 .molkobain-bubble-caselogs{
 	box-sizing: border-box;
@@ -44,8 +58,9 @@ $bubble-5th-peer-bg-color: darken($combodo-orange, 14%) !default;
 		left: 0px;
 		width: 100%;
 		height: 100%;
-		padding-top: 20px;
-		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		background: rgba(0, 0, 0, 0.33);
 		color: #080808;
 	}

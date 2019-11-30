@@ -14,7 +14,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 SetupWebPage::AddModule(
 	__FILE__, // Path to the current file, all other file names are relative to the directory containing this file
-	'molkobain-bubble-caselogs/1.2.1',
+	'molkobain-bubble-caselogs/1.2.2',
 	array(
 		// Identification
 		//
@@ -61,6 +61,8 @@ SetupWebPage::AddModule(
             'enabled' => true,
             'all_entries_opened' => false,
             'reverse_order' => false,
+			'disabled_in_backoffice' => false,
+			'disabled_in_portals' => false,
 		),
 	)
 );
