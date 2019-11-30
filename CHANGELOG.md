@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [1.2.2] - 2019-11-30
+### Changed
+- Fix visual glitch when loading formatted caselog from server
+- Update dependencies to last versions
+
+### Added
+- Add config. parameters to disable reformatting in admin. console or end-user portals
+
 ## [1.2.1] - 2019-07-24
 ### Changed
 - Update dependencies to include their fixes
