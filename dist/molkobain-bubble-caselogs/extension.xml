@@ -5,9 +5,9 @@
 	<author><![CDATA[Guillaume Lajarige]]></author>
 	<label><![CDATA[Bubble caselogs]]></label>
 	<description><![CDATA[Modern look and feel for caselogs in both the enhanced portal and the console.]]></description>
-	<version>1.2.2</version>
-	<release_date>2019-11-30</release_date>
-	<version_description><![CDATA[Fix visual glitch and add config. parameters]]></version_description>
+	<version>1.2.3</version>
+	<release_date>2019-12-13</release_date>
+	<version_description><![CDATA[Fix visual "Object not found" in the admin. console]]></version_description>
 	<itop_version_min>2.4.0</itop_version_min>
 	<status>stable</status>
 	<mandatory>false</mandatory>
