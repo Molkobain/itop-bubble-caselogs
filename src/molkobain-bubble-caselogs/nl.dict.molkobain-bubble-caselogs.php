@@ -8,7 +8,7 @@
  */
 
 Dict::Add('NL NL', 'Dutch', 'Nederlands', array(
-	'Molkobain:BubbleCaselogs:Entries:OpenAll' => 'Open all messages~~',
-    'Molkobain:BubbleCaselogs:Entries:CloseAll' => 'Close all messages~~',
-    'Molkobain:BubbleCaselogs:Entry:Close' => 'Close~~',
+	'Molkobain:BubbleCaselogs:Entries:OpenAll' => 'Open alle berichten',
+    'Molkobain:BubbleCaselogs:Entries:CloseAll' => 'Sluit alle berichten',
+    'Molkobain:BubbleCaselogs:Entry:Close' => 'Sluiten',
 ));
