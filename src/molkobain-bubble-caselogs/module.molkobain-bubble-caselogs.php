@@ -14,7 +14,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 SetupWebPage::AddModule(
 	__FILE__, // Path to the current file, all other file names are relative to the directory containing this file
-	'molkobain-bubble-caselogs/1.2.3',
+	'molkobain-bubble-caselogs/1.3.0',
 	array(
 		// Identification
 		//
@@ -24,9 +24,9 @@ SetupWebPage::AddModule(
 		// Setup
 		//
 		'dependencies' => array(
-			'molkobain-handy-framework/1.2.4',
-			'molkobain-fontawesome5-pack/1.1.1',
-			'molkobain-newsroom-provider/1.0.1',
+			'molkobain-handy-framework/1.4.0',
+			'molkobain-fontawesome5-pack/1.2.0',
+			'molkobain-newsroom-provider/1.0.2',
 		),
 		'mandatory' => false,
 		'visible' => true,
@@ -37,6 +37,8 @@ SetupWebPage::AddModule(
 		    'common/confighelper.class.inc.php',
 		    'common/caseloghelper.class.inc.php',
 		    'console/applicationuiextension.class.inc.php',
+			// Important: Legacy class MUST be loaded before the standard.
+            'portal/apis/extensions/portaluiextensionlegacy.class.inc.php',
             'portal/apis/extensions/portaluiextension.class.inc.php',
 		),
 		'webservice' => array(
