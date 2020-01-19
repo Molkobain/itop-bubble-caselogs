@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2015 - 2019 Molkobain.
+ * Copyright (c) 2015 - 2020 Molkobain.
  *
  * This file is part of licensed extension.
  *
@@ -9,26 +9,25 @@
 
 namespace Molkobain\iTop\Extension\BubbleCaselogs\Portal\Extension;
 
-use Symfony\Component\DependencyInjection\Container;
 use utils;
 use AbstractPortalUIExtension;
+use Silex\Application;
 use Molkobain\iTop\Extension\BubbleCaselogs\Common\Helper\ConfigHelper;
 
-// Protection for iTop 2.6 and older
-if(!class_exists('Molkobain\\iTop\\Extension\\BubbleCaselogs\\Portal\\Extension\\PortalUIExtensionLegacy'))
+// Protection for iTop 2.3- and iTop 2.7+
+if(class_exists('\AbstractPortalUIExtension') && version_compare(ITOP_VERSION, '2.7', '<') && (ITOP_VERSION !== 'develop'))
 {
 	/**
-	 * Class PortalUIExtension
+	 * Class PortalUIExtensionLegacy
 	 *
 	 * @package Molkobain\iTop\Extension\BubbleCaselogs\Portal\Extension
 	 */
-	class PortalUIExtension extends AbstractPortalUIExtension
+	class PortalUIExtensionLegacy extends AbstractPortalUIExtension
 	{
 		/**
 		 * @inheritdoc
-		 * @throws \Exception
 		 */
-		public function GetCSSFiles(Container $oContainer)
+		public function GetCSSFiles(Application $oApp)
 		{
 			// Check if disabled
 			if((ConfigHelper::IsEnabled() === false) || (ConfigHelper::GetSetting('disabled_in_portals') === true))
@@ -48,9 +47,8 @@ if(!class_exists('Molkobain\\iTop\\Extension\\BubbleCaselogs\\Portal\\Extension\
 
 		/**
 		 * @inheritdoc
-		 * @throws \Exception
 		 */
-		public function GetJSFiles(Container $oContainer)
+		public function GetJSFiles(Application $oApp)
 		{
 			// Check if disabled
 			if((ConfigHelper::IsEnabled() === false) || (ConfigHelper::GetSetting('disabled_in_portals') === true))
@@ -70,9 +68,8 @@ if(!class_exists('Molkobain\\iTop\\Extension\\BubbleCaselogs\\Portal\\Extension\
 
 		/**
 		 * @inheritdoc
-		 * @throws \Exception
 		 */
-		public function GetJSInline(Container $oContainer)
+		public function GetJSInline(Application $oApp)
 		{
 			// Check if disabled
 			if((ConfigHelper::IsEnabled() === false) || (ConfigHelper::GetSetting('disabled_in_portals') === true))

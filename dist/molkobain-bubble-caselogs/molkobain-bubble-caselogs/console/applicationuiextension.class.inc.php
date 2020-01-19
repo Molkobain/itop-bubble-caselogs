@@ -33,6 +33,12 @@ class ApplicationUIExtension implements iApplicationUIExtension
             return;
         }
 
+        // Don't do anything if new object
+	    if($oObject->IsNew())
+	    {
+	    	return;
+	    }
+
         $sModuleVersion = utils::GetCompiledModuleVersion(ConfigHelper::GetModuleCode());
         $bDebug = (ConfigHelper::GetSetting('debug') === true) ? 'true' : 'false';
 

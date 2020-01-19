@@ -9,26 +9,26 @@
 
 namespace Molkobain\iTop\Extension\FontAwesome5\Portal\Extension;
 
-use utils;
 use AbstractPortalUIExtension;
-use Symfony\Component\DependencyInjection\Container;
+use Silex\Application;
+use utils;
 
-// Protection for iTop 2.6 and older
-if(!class_exists('Molkobain\\iTop\\Extension\\FontAwesome5\\Portal\\Extension\\PortalUIExtensionLegacy'))
+// Protection, only for iTop 2.4-2.6
+if(version_compare(ITOP_VERSION, '2.3', '>') && version_compare(ITOP_VERSION, '2.7', '<') && (ITOP_VERSION !== 'develop'))
 {
 	/**
-	 * Class PortalUIExtension
+	 * Class PortalUIExtensionLegacy
 	 *
 	 * @package Molkobain\iTop\Extension\FontAwesome5\Portal\Extension
 	 * @since v1.2.0
 	 */
-	class PortalUIExtension extends AbstractPortalUIExtension
+	class PortalUIExtensionLegacy extends AbstractPortalUIExtension
 	{
 		/**
 		 * @inheritdoc
 		 * @throws \Exception
 		 */
-		public function GetCSSFiles(Container $oContainer)
+		public function GetCSSFiles(Application $oApp)
 		{
 			$aReturn = array();
 

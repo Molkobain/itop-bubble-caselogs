@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2015 - 2019 Molkobain.
+ * Copyright (c) 2015 - 2020 Molkobain.
  *
  * This file is part of licensed extension.
  *
@@ -14,7 +14,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 SetupWebPage::AddModule(
 	__FILE__, // Path to the current file, all other file names are relative to the directory containing this file
-	'molkobain-fontawesome5-pack/1.1.1',
+	'molkobain-fontawesome5-pack/1.2.0',
 	array(
 		// Identification
 		//
@@ -32,6 +32,8 @@ SetupWebPage::AddModule(
 		//
 		'datamodel' => array(
 			'console/pageuiextension.class.inc.php',
+			// Important: Legacy class MUST be loaded before the standard.
+			'portal/portaluiextensionlegacy.class.inc.php',
 			'portal/portaluiextension.class.inc.php',
 		),
 		'webservice' => array(
@@ -56,6 +58,3 @@ SetupWebPage::AddModule(
 		),
 	)
 );
-
-
-?>
