@@ -88,7 +88,7 @@ function GetBubbleCaselogsEndpointUrl(sCurrentUrl)
 {
     var sEndpoint = sCurrentUrl;
     var sEndpointTemplate = '{$sEndpointTemplate}';
-    var aMatches = sCurrentUrl.match(/\/object\/(create|edit|view)\/([a-zA-Z0-9]+)\/([0-9+])/);
+    var aMatches = sCurrentUrl.match(/\/object\/(create|edit|view)\/([a-zA-Z0-9]+)\/([0-9]+)/);
     
     if(aMatches.length === 4)
     {
