@@ -57,10 +57,8 @@ try
                 throw new Exception('Invalid parameters');
             }
 
-            $oFilter = DBSearch::FromOQL('SELECT ' . $sClass . ' WHERE id = :id');
-            $oSet = new DBObjectSet($oFilter, array(), array('id' => $iKey));
-
-            if($oObject = $oSet->Fetch())
+            $oObject = MetaModel::GetObject($sClass, $iKey, false, true);
+            if($oObject !== null)
             {
                 /** @var \ormCaseLog $oCaseLog */
                 $oCaseLog = $oObject->Get($sAttCode);
