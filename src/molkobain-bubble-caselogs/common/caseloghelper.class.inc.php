@@ -125,25 +125,29 @@ EOF;
                 // - Trying to retrieving it from database
                 if(MetaModel::IsValidAttCode('Person', 'picture'))
                 {
-                    $oEntryUser = MetaModel::GetObject('User', $iEntryUserId, false);
+                    $oEntryUser = MetaModel::GetObject('User', $iEntryUserId, false, true);
                     if($oEntryUser !== null)
                     {
                         $sEntryContactClass = 'Person';
-                        $iEntryContactId = $oEntryUser->Get('contactid');
-                        $oEntryContact = MetaModel::GetObject($sEntryContactClass, $iEntryContactId, false);
-
                         $sEntryPictureAttCode = 'picture';
-                        /** @var \ormDocument $oEntryPicture */
-                        $oEntryPicture = $oEntryContact->Get($sEntryPictureAttCode);
-                        if(!$oEntryPicture->IsEmpty())
+                        $iEntryContactId = $oEntryUser->Get('contactid');
+                        $oEntryContact = MetaModel::GetObject($sEntryContactClass, $iEntryContactId, false, true);
+
+                        // Protection against users without contact and DM without standard picture attribute
+                        if(($oEntryContact !== null) && (MetaModel::IsValidAttCode($sEntryContactClass, $sEntryPictureAttCode)))
                         {
-                        	if($sGUI === static::ENUM_UI_PORTAL)
+	                        /** @var \ormDocument $oEntryPicture */
+	                        $oEntryPicture = $oEntryContact->Get($sEntryPictureAttCode);
+	                        if(!$oEntryPicture->IsEmpty())
 	                        {
-	                        	$sEntryContactPictureUrl = utils::GetAbsoluteUrlAppRoot() . 'pages/exec.php/object/document/display/' . $sEntryContactClass . '/' . $iEntryContactId . '/' . $sEntryPictureAttCode . '?exec_module=itop-portal&exec_page=index.php';
-	                        }
-                        	else
-	                        {
-                                $sEntryContactPictureUrl = $oEntryPicture->GetDisplayURL($sEntryContactClass, $iEntryContactId, $sEntryPictureAttCode);
+		                        if($sGUI === static::ENUM_UI_PORTAL)
+		                        {
+			                        $sEntryContactPictureUrl = utils::GetAbsoluteUrlAppRoot() . 'pages/exec.php/object/document/display/' . $sEntryContactClass . '/' . $iEntryContactId . '/' . $sEntryPictureAttCode . '?exec_module=itop-portal&exec_page=index.php';
+		                        }
+		                        else
+		                        {
+			                        $sEntryContactPictureUrl = $oEntryPicture->GetDisplayURL($sEntryContactClass, $iEntryContactId, $sEntryPictureAttCode);
+		                        }
 	                        }
                         }
                     }
