@@ -6,20 +6,23 @@
  * Use of this extension is bound by the license you purchased. A license grants you a non-exclusive and non-transferable right to use and incorporate the item in your personal or commercial projects. There are several licenses available (see https://www.molkobain.com/usage-licenses/ for more informations)
  */
 @import '../datamodels/2.x/itop-portal-base/portal/web/css/variables.scss';
+@import '../datamodels/2.x/itop-portal-base/portal/public/css/variables.scss';
 
 //== Conversation bubbles
-$bubble-self-color: $gray-dark !default;
-$bubble-self-bg-color: $white !default;
-$bubble-1st-peer-color: $white !default;
-$bubble-1st-peer-bg-color: $combodo-orange !default;
-$bubble-2nd-peer-color: $white !default;
-$bubble-2nd-peer-bg-color: #e9a537 !default;
-$bubble-3rd-peer-color: $white !default;
-$bubble-3rd-peer-bg-color: darken($combodo-orange, 7%) !default;
-$bubble-4th-peer-color: $white !default;
-$bubble-4th-peer-bg-color: #e3952c !default;
-$bubble-5th-peer-color: $white !default;
-$bubble-5th-peer-bg-color: darken($combodo-orange, 14%) !default;
+$bubble-default-color: #444 !default;
+$bubble-default-bg-color: #FFF !default;
+$bubble-self-color: $bubble-default-color !default;
+$bubble-self-bg-color: $bubble-default-bg-color !default;
+$bubble-1st-peer-color: $bubble-default-color !default;
+$bubble-1st-peer-bg-color: $bubble-default-bg-color !default;
+$bubble-2nd-peer-color: $bubble-default-color !default;
+$bubble-2nd-peer-bg-color: $bubble-default-bg-color !default;
+$bubble-3rd-peer-color: $bubble-default-color !default;
+$bubble-3rd-peer-bg-color: $bubble-default-bg-color !default;
+$bubble-4th-peer-color: $bubble-default-color !default;
+$bubble-4th-peer-bg-color: $bubble-default-bg-color !default;
+$bubble-5th-peer-color: $bubble-default-color !default;
+$bubble-5th-peer-bg-color: $bubble-default-bg-color !default;
 
 /* Hide standard caselogs to avoid glitch while reformatting */
 /* - Console */
