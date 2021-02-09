@@ -1,4 +1,4 @@
-👋 [iTop Hub](https://store.itophub.io/en_US/products/molkobain-bubble-caselogs) and [Available on Molkobain I/O](https://www.molkobain.com/product/bubble-caselogs/)
+👋 Available on [iTop Hub](https://store.itophub.io/en_US/products/molkobain-bubble-caselogs) and [Molkobain I/O](https://www.molkobain.com/product/bubble-caselogs/)
 
 # iTop extension: molkobain-bubble-caselogs
 * [Description](#description)
