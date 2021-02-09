@@ -79,5 +79,11 @@ Some configuration parameters are available from the Configuration editor of the
 ),
 ```
 
+## Contributors
+I would like to give a special thank you to those who contributed to this project, including:
+
+### Aliases
+- @pcadeot
+
 ## Licensing
 This extension is bound by the license you purchased. A license grants you a non-exclusive and non-transferable right to use and incorporate the item in your personal or commercial projects. There are several [licenses available](https://www.molkobain.com/usage-licenses/).
