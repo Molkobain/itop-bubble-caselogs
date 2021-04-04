@@ -181,7 +181,7 @@ EOF;
 
                     // Opening medallion from profile picture or first name letter
                     $sEntryMedallionStyle = ($sEntryContactPictureUrl !== null) ? ' background-image: url(\'' . $sEntryContactPictureUrl . '\');' : '';
-                    $sEntryMedallionContent = ($sEntryContactPictureUrl !== null) ? '' : substr($sEntryUser, 0, 1);
+                    $sEntryMedallionContent = ($sEntryContactPictureUrl !== null) ? '' : mb_substr($sEntryUser, 0, 1);
                     // - Entry tooltip
                     $sEntryMedallionTooltip = $sEntryUser;
                     $sEntryMedallionTooltipPlacement = ($iEntryUserId === $iCurrentUserId) ? 'left' : 'right';

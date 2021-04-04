@@ -32,7 +32,7 @@ if(version_compare(ITOP_VERSION, '2.3', '>') && version_compare(ITOP_VERSION, '2
 		{
 			$aReturn = array();
 
-			$aReturn[] = utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/fontawesome-free-5.12.0-web/css/all.min.css?v=' . utils::GetCompiledModuleVersion('molkobain-fontawesome5-pack');
+			$aReturn[] = utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/fontawesome-free-5.15.3-web/css/all.min.css?v=' . utils::GetCompiledModuleVersion('molkobain-fontawesome5-pack');
 
 			return $aReturn;
 		}

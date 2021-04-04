@@ -26,7 +26,7 @@ class PageUIExtension implements iPageUIExtension
     public function GetNorthPaneHtml(iTopWebPage $oPage)
     {
         $sModuleVersion = utils::GetCompiledModuleVersion('molkobain-fontawesome5-pack');
-        $oPage->add_linked_stylesheet(utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/fontawesome-free-5.12.0-web/css/all.min.css?v=' . $sModuleVersion);
+        $oPage->add_linked_stylesheet(utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/fontawesome-free-5.15.3-web/css/all.min.css?v=' . $sModuleVersion);
     }
 
     /**
