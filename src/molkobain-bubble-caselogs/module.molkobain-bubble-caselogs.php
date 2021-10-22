@@ -24,7 +24,7 @@ SetupWebPage::AddModule(
 		// Setup
 		//
 		'dependencies' => array(
-			'molkobain-handy-framework/1.4.0',
+			'molkobain-handy-framework/1.7.0',
 			'molkobain-fontawesome5-pack/1.2.0',
 			'molkobain-newsroom-provider/1.0.2',
 		),
