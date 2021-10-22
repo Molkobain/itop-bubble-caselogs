@@ -29,4 +29,13 @@ class ConfigHelper extends BaseConfigHelper
     const DEFAULT_SETTING_OPEN_ALL_ICON = 'fas fa-book-open';
     const DEFAULT_SETTING_CLOSE_ALL_ICON = 'fas fa-book';
     const DEFAULT_SETTING_ICONS_SEPARATOR = '-';
+
+	/**
+	 * @inheritDoc
+	 * @since v1.5.0
+	 */
+	public static function IsEnabled()
+	{
+		return parent::IsEnabled() && (static::IsRunningiTop30OrNewer() === false);
+	}
 }

@@ -9,6 +9,7 @@
 
 namespace Molkobain\iTop\Extension\FontAwesome5\Console\Extension;
 
+use MetaModel;
 use utils;
 use iTopWebPage;
 use iPageUIExtension;
@@ -25,6 +26,10 @@ class PageUIExtension implements iPageUIExtension
      */
     public function GetNorthPaneHtml(iTopWebPage $oPage)
     {
+    	if (MetaModel::GetConfig()->GetModuleSetting('molkobain-fontawesome5-pack', 'enabled', true) === false) {
+    		return;
+	    }
+
         $sModuleVersion = utils::GetCompiledModuleVersion('molkobain-fontawesome5-pack');
         $oPage->add_linked_stylesheet(utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/fontawesome-free-5.15.3-web/css/all.min.css?v=' . $sModuleVersion);
     }

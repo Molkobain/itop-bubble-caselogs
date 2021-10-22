@@ -11,6 +11,7 @@ namespace Molkobain\iTop\Extension\FontAwesome5\Portal\Extension;
 
 use utils;
 use AbstractPortalUIExtension;
+use MetaModel;
 use Symfony\Component\DependencyInjection\Container;
 
 // Protection for iTop 2.6 and older
@@ -31,6 +32,10 @@ if(!class_exists('Molkobain\\iTop\\Extension\\FontAwesome5\\Portal\\Extension\\P
 		public function GetCSSFiles(Container $oContainer)
 		{
 			$aReturn = array();
+
+			if (MetaModel::GetConfig()->GetModuleSetting('molkobain-fontawesome5-pack', 'enabled', true) === false) {
+				return $aReturn;
+			}
 
 			$aReturn[] = utils::GetAbsoluteUrlModulesRoot() . 'molkobain-fontawesome5-pack/fontawesome-free-5.15.3-web/css/all.min.css?v=' . utils::GetCompiledModuleVersion('molkobain-fontawesome5-pack');
 
