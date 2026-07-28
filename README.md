@@ -1,3 +1,6 @@
+> [!WARNING]
+> This module is obsolete for iTop 3.0+ as it is now directly included in iTop core, you should consider removing it from your instance.
+ 
 👋 Available on [iTop Hub](https://store.itophub.io/en_US/products/molkobain-bubble-caselogs) and [Molkobain I/O](https://www.molkobain.com/product/bubble-caselogs/)
 
 # iTop extension: molkobain-bubble-caselogs
@@ -80,4 +83,4 @@ I would like to give a special thank you to those who contributed to this projec
 - @pcadeot
 
 ## Licensing
-This extension is bound by the license you purchased. A license grants you a non-exclusive and non-transferable right to use and incorporate the item in your personal or commercial projects. There are several [licenses available](https://www.molkobain.com/usage-licenses/).
+This extension is under [AGPLv3](https://en.wikipedia.org/wiki/GNU_Affero_General_Public_License).
